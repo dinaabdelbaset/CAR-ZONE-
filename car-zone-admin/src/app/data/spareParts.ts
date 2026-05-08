@@ -1,0 +1,236 @@
+export interface ISparePart {
+  id: string;
+  name: string;
+  category: string;
+  brand: string;
+  price: number;
+  image: string;
+  description: string;
+  compatibility: string[];
+  inStock: boolean;
+  partNumber: string;
+  warranty: string;
+  condition: "New" | "Refurbished" | "Used";
+}
+
+// export const sparePartsData: ISparePart[] = [
+//   {
+//     id: "p1",
+//     name: "Brake Pad Set",
+//     category: "Brakes",
+//     brand: "Brembo",
+//     price: 89.99,
+//     image:
+//       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcGFyZSUyMHBhcnRzfGVufDF8fHx8MTc3MDE1NjI2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Premium ceramic brake pads for superior stopping power and reduced dust. Engineered for high performance and longevity.",
+//     compatibility: ["Honda Accord", "Toyota Camry", "Nissan Altima"],
+//     inStock: true,
+//     partNumber: "BP-5000-CER",
+//     warranty: "2 years",
+//     condition: "New",
+//   },
+//   {
+//     id: "p2",
+//     name: "Oil Filter",
+//     category: "Engine",
+//     brand: "Mobil 1",
+//     price: 12.99,
+//     image:
+//       "https://images.unsplash.com/photo-1762139258224-236877b2c571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBlbmdpbmUlMjBwYXJ0c3xlbnwxfHx8fDE3NzAxMDg0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Extended performance oil filter with synthetic fiber blend. Provides superior filtration and engine protection for up to 20,000 miles.",
+//     compatibility: ["BMW 3 Series", "Mercedes-Benz C-Class", "Audi A4"],
+//     inStock: true,
+//     partNumber: "OF-1000-EP",
+//     warranty: "1 year",
+//     condition: "New",
+//   },
+//   {
+//     id: "p3",
+//     name: "Air Filter",
+//     category: "Engine",
+//     brand: "K&N",
+//     price: 54.99,
+//     image:
+//       "https://images.unsplash.com/photo-1758813147407-f9c9c1055e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcGFydHMlMjBzdG9yZXxlbnwxfHx8fDE3NzAwNjkxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "High-flow reusable air filter that increases horsepower and acceleration. Washable and reusable for the life of your vehicle.",
+//     compatibility: ["Ford F-150", "Chevrolet Silverado", "Ram 1500"],
+//     inStock: true,
+//     partNumber: "AF-3300-HF",
+//     warranty: "10 years / 1 million miles",
+//     condition: "New",
+//   },
+//   {
+//     id: "p4",
+//     name: "Spark Plugs Set",
+//     category: "Ignition",
+//     brand: "NGK",
+//     price: 34.99,
+//     image:
+//       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcGFyZSUyMHBhcnRzfGVufDF8fHx8MTc3MDE1NjI2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Iridium spark plugs for improved fuel efficiency and engine performance. Set of 4 plugs with anti-seize coating.",
+//     compatibility: ["Honda Civic", "Toyota Corolla", "Mazda 3"],
+//     inStock: true,
+//     partNumber: "SP-4400-IR",
+//     warranty: "3 years",
+//     condition: "New",
+//   },
+//   {
+//     id: "p5",
+//     name: "Battery",
+//     category: "Electrical",
+//     brand: "Optima",
+//     price: 249.99,
+//     image:
+//       "https://images.unsplash.com/photo-1762139258224-236877b2c571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBlbmdpbmUlMjBwYXJ0c3xlbnwxfHx8fDE3NzAxMDg0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "RedTop high-performance AGM battery. Spill-proof and vibration resistant with exceptional starting power.",
+//     compatibility: ["Universal - Check specifications"],
+//     inStock: true,
+//     partNumber: "BAT-8000-AGM",
+//     warranty: "3 years",
+//     condition: "New",
+//   },
+//   {
+//     id: "p6",
+//     name: "Headlight Assembly",
+//     category: "Lighting",
+//     brand: "OEM",
+//     price: 189.99,
+//     image:
+//       "https://images.unsplash.com/photo-1758813147407-f9c9c1055e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcGFydHMlMjBzdG9yZXxlbnwxfHx8fDE3NzAwNjkxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Complete LED headlight assembly with integrated daytime running lights. Direct replacement for factory unit.",
+//     compatibility: ["Ford Escape", "Ford Edge"],
+//     inStock: false,
+//     partNumber: "HL-6000-LED",
+//     warranty: "2 years",
+//     condition: "New",
+//   },
+//   {
+//     id: "p7",
+//     name: "Wiper Blade Set",
+//     category: "Maintenance",
+//     brand: "Bosch",
+//     price: 24.99,
+//     image:
+//       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcGFyZSUyMHBhcnRzfGVufDF8fHx8MTc3MDE1NjI2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "All-season beam wiper blades with precision-cut rubber edge. Provides streak-free wiping in all weather conditions.",
+//     compatibility: ["Universal - Multiple sizes available"],
+//     inStock: true,
+//     partNumber: "WB-2200-AS",
+//     warranty: "1 year",
+//     condition: "New",
+//   },
+//   {
+//     id: "p8",
+//     name: "Radiator",
+//     category: "Cooling",
+//     brand: "Mishimoto",
+//     price: 324.99,
+//     image:
+//       "https://images.unsplash.com/photo-1762139258224-236877b2c571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBlbmdpbmUlMjBwYXJ0c3xlbnwxfHx8fDE3NzAxMDg0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Performance aluminum radiator with increased cooling capacity. TIG-welded end tanks and brazed aluminum core.",
+//     compatibility: ["Subaru WRX", "Subaru STI"],
+//     inStock: true,
+//     partNumber: "RAD-7500-AL",
+//     warranty: "Lifetime",
+//     condition: "New",
+//   },
+//   {
+//     id: "p9",
+//     name: "Alternator",
+//     category: "Electrical",
+//     brand: "Denso",
+//     price: 279.99,
+//     image:
+//       "https://images.unsplash.com/photo-1758813147407-f9c9c1055e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcGFydHMlMjBzdG9yZXxlbnwxfHx8fDE3NzAwNjkxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Remanufactured alternator with OE quality. Tested to ensure reliable charging performance and longevity.",
+//     compatibility: ["Toyota Camry", "Toyota RAV4"],
+//     inStock: true,
+//     partNumber: "ALT-9200-RM",
+//     warranty: "2 years",
+//     condition: "Refurbished",
+//   },
+//   {
+//     id: "p10",
+//     name: "Fuel Pump",
+//     category: "Fuel System",
+//     brand: "Delphi",
+//     price: 159.99,
+//     image:
+//       "https://images.unsplash.com/photo-1762139258224-236877b2c571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBlbmdpbmUlMjBwYXJ0c3xlbnwxfHx8fDE3NzAxMDg0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Electric fuel pump module assembly with fuel level sensor. OE-equivalent quality and performance.",
+//     compatibility: ["Chevrolet Malibu", "Chevrolet Cruze"],
+//     inStock: true,
+//     partNumber: "FP-3100-EL",
+//     warranty: "3 years",
+//     condition: "New",
+//   },
+//   {
+//     id: "p11",
+//     name: "Suspension Strut",
+//     category: "Suspension",
+//     brand: "Monroe",
+//     price: 134.99,
+//     image:
+//       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcGFyZSUyMHBhcnRzfGVufDF8fHx8MTc3MDE1NjI2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Complete strut assembly with coil spring and mount. Restores ride comfort and handling performance.",
+//     compatibility: ["Honda CR-V", "Honda Pilot"],
+//     inStock: true,
+//     partNumber: "ST-5500-CP",
+//     warranty: "Limited lifetime",
+//     condition: "New",
+//   },
+//   {
+//     id: "p12",
+//     name: "Timing Belt Kit",
+//     category: "Engine",
+//     brand: "Gates",
+//     price: 199.99,
+//     image:
+//       "https://images.unsplash.com/photo-1758813147407-f9c9c1055e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcGFydHMlMjBzdG9yZXxlbnwxfHx8fDE3NzAwNjkxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+//     description:
+//       "Complete timing belt kit with water pump, tensioners, and all necessary gaskets. Preventive maintenance package.",
+//     compatibility: ["Volkswagen Passat", "Audi A4"],
+//     inStock: true,
+//     partNumber: "TB-6600-KT",
+//     warranty: "2 years",
+//     condition: "New",
+//   },
+// ];
+
+export const partCategories = [
+  "Brakes",
+  "Engine",
+  "Ignition",
+  "Electrical",
+  "Lighting",
+  "Maintenance",
+  "Cooling",
+  "Fuel System",
+  "Suspension",
+];
+
+export const partBrands = [
+  "Brembo",
+  "Mobil 1",
+  "K&N",
+  "NGK",
+  "Optima",
+  "OEM",
+  "Bosch",
+  "Mishimoto",
+  "Denso",
+  "Delphi",
+  "Monroe",
+  "Gates",
+];

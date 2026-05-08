@@ -1,0 +1,15 @@
+{
+  "name": "car-zone-monorepo",
+  "private": true,
+  "workspaces": [
+    "car-zone",
+    "car-zone-backend"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev": "concurrently \"npm run --prefix car-zone-backend start\" \"npm run --prefix car-zone dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
