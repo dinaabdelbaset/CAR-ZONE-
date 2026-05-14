@@ -7,6 +7,8 @@ import { CarDetailsPage } from "./pages/CarDetailsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { UsedCarsPage } from "./pages/UsedCarsPage";
 import { SparePartsPage } from "./pages/SparePartsPage";
+import { ProfilePage } from "./pages/ProfilePage";
+import { LoginPage } from "./pages/LoginPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "./components/ui/sonner";
 
@@ -30,6 +32,8 @@ export default function App() {
             <Route path="/compare" element={<><Navigation /><CompareModelsPage /></>} />
             <Route path="/car/:id" element={<><Navigation /><CarDetailsPage /></>} />
             <Route path="/contact" element={<><Navigation /><ContactPage /></>} />
+            <Route path="/profile" element={<><Navigation /><ProfilePage /></>} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
           <Toaster />
         </div>

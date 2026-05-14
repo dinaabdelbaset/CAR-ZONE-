@@ -12,7 +12,7 @@ export class AuthService {
 
   async validateUser(email: string, pass: string): Promise<any> {
     const user = await this.usersService.findByEmail(email);
-    if (user && user.role === 'Admin') {
+    if (user) {
       // For testing, if the password isn't hashed yet, we check direct match or hashed
       const isMatch = await bcrypt.compare(pass, user.password || '') || pass === user.password;
       if (isMatch) {

@@ -15,6 +15,7 @@ import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
 import { OrdersModule } from './orders/orders.module';
 import { AuthModule } from './auth/auth.module';
+import { MaintenanceModule } from './maintenance/maintenance.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     OrdersModule,
     AuthModule,
+    MaintenanceModule,
   ],
   controllers: [AppController],
   providers: [AppService],

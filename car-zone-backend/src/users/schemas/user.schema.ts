@@ -14,7 +14,7 @@ export class User {
   @Prop({ required: true })
   password?: string; // In a real app, this would be hashed
 
-  @Prop({ default: 'User', enum: ['User', 'Admin'] })
+  @Prop({ default: 'User', enum: ['User', 'Admin', 'Engineer'] })
   role: string;
 
   @Prop({ default: 'Active', enum: ['Active', 'Suspended'] })

@@ -19,6 +19,7 @@ export function AdminLayout() {
     { name: "Spare Parts", path: "/spare-parts", icon: <Wrench size={20} /> },
     { name: "Users", path: "/users", icon: <Users size={20} /> },
     { name: "Orders", path: "/orders", icon: <FileText size={20} /> },
+    { name: "Maintenance", path: "/maintenance", icon: <Wrench size={20} /> },
   ];
 
   return (

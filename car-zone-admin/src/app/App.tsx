@@ -8,6 +8,7 @@ import { AdminUsers } from "./pages/admin/AdminUsers";
 import { AdminOrders } from "./pages/admin/AdminOrders";
 import { AdminUsedCars } from "./pages/admin/AdminUsedCars";
 import { AdminSpareParts } from "./pages/admin/AdminSpareParts";
+import { AdminMaintenance } from "./pages/admin/AdminMaintenance";
 import { LoginPage } from "./pages/auth/LoginPage";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ export default function App() {
                 <Route path="used-cars" element={<AdminUsedCars />} />
                 <Route path="spare-parts" element={<AdminSpareParts />} />
                 <Route path="orders" element={<AdminOrders />} />
+                <Route path="maintenance" element={<AdminMaintenance />} />
               </Route>
             </Route>
           </Routes>
