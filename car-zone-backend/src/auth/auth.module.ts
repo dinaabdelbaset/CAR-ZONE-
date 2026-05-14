@@ -5,10 +5,12 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { UsersModule } from '../users/users.module';
 import { JwtStrategy } from './jwt.strategy';
+import { MaintenanceModule } from '../maintenance/maintenance.module';
 
 @Module({
   imports: [
     UsersModule,
+    MaintenanceModule,
     PassportModule,
     JwtModule.register({
       secret: 'super-secret-key-for-car-zone-do-not-use-in-prod',
