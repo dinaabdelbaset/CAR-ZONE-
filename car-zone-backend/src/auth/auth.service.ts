@@ -53,7 +53,7 @@ export class AuthService {
     } as any);
 
     // Seed a dummy car so they can test maintenance requests immediately
-    await this.maintenanceService.addUserCar(user._id.toString(), {
+    await this.maintenanceService.addUserCar((user as any)._id.toString(), {
       brand: 'Hyundai',
       model: 'Tucson 2024',
       vin: 'VIN-' + Math.floor(Math.random() * 100000),
