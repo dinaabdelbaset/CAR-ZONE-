@@ -55,10 +55,10 @@ export class AuthService {
     // Seed a dummy car so they can test maintenance requests immediately
     await this.maintenanceService.addUserCar((user as any)._id.toString(), {
       brand: 'Hyundai',
-      model: 'Tucson 2024',
-      vin: 'VIN-' + Math.floor(Math.random() * 100000),
+      carModel: 'Tucson 2024',
+      vin: 'VIN-' + Math.floor(Math.random() * 1000000),
       purchaseDate: new Date(),
-      plate: 'س ي ا 999',
+      plateNumber: 'س ي ا 999',
     } as any);
 
     return user;
