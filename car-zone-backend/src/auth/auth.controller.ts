@@ -10,12 +10,21 @@ export class AuthController {
 
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: 'Admin login' })
+  @ApiOperation({ summary: 'User login' })
   async login(@Body() loginDto: LoginDto) {
     const user = await this.authService.validateUser(loginDto.email, loginDto.password);
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials or not an admin');
+      throw new UnauthorizedException('Invalid credentials');
     }
     return this.authService.login(user);
   }
+
+  @Post('register')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'Customer Registration' })
+  async register(@Body() body: any) {
+    const user = await this.authService.register(body.name, body.email, body.password);
+    return this.authService.login(user);
+  }
 }
+

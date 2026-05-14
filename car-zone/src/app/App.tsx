@@ -9,6 +9,7 @@ import { UsedCarsPage } from "./pages/UsedCarsPage";
 import { SparePartsPage } from "./pages/SparePartsPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { LoginPage } from "./pages/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "./components/ui/sonner";
 
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/contact" element={<><Navigation /><ContactPage /></>} />
             <Route path="/profile" element={<><Navigation /><ProfilePage /></>} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Routes>
           <Toaster />
         </div>
