@@ -49,7 +49,7 @@ export class AuthService {
       name,
       email,
       password: hashedPassword,
-      role: 'Customer',
+      role: 'User',
     } as any);
 
     // Seed a dummy car so they can test maintenance requests immediately
